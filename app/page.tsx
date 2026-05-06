@@ -131,11 +131,21 @@ export default function Home() {
           </a>
 
           <div className="hidden items-center gap-7 text-sm font-semibold md:flex">
-            <a href="#services" className="hover:text-green-300">Services</a>
-            <a href="#pricing" className="hover:text-green-300">Pricing</a>
-            <a href="#portfolio" className="hover:text-green-300">Portfolio</a>
-            <a href="#about" className="hover:text-green-300">About</a>
-            <a href="#contact" className="hover:text-green-300">Contact</a>
+            <a href="#services" className="hover:text-green-300">
+              Services
+            </a>
+            <a href="#pricing" className="hover:text-green-300">
+              Pricing
+            </a>
+            <a href="#portfolio" className="hover:text-green-300">
+              Portfolio
+            </a>
+            <a href="#about" className="hover:text-green-300">
+              About
+            </a>
+            <a href="#contact" className="hover:text-green-300">
+              Contact
+            </a>
           </div>
         </nav>
 
@@ -428,7 +438,88 @@ export default function Home() {
                 alert("There was a problem sending your request. Please try again.");
               }
             }}
-          ></form>
+          >
+            <div>
+              <label className="mb-2 block text-sm font-bold text-slate-200">
+                Name
+              </label>
+
+              <input
+                name="name"
+                type="text"
+                required
+                placeholder="Your name"
+                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-bold text-slate-200">
+                Email
+              </label>
+
+              <input
+                name="email"
+                type="email"
+                required
+                placeholder="your@email.com"
+                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-bold text-slate-200">
+                Service Needed
+              </label>
+
+              <select
+                name="service"
+                required
+                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+              >
+                <option value="">Select a service</option>
+                <option value="Business Website Development">
+                  Business Website Development
+                </option>
+                <option value="Automation Engineering">
+                  Automation Engineering
+                </option>
+                <option value="Data Integration & ETL">
+                  Data Integration & ETL
+                </option>
+                <option value="Technical Support & Debugging">
+                  Technical Support & Debugging
+                </option>
+                <option value="DevOps & Infrastructure">
+                  DevOps & Infrastructure
+                </option>
+                <option value="Custom Software Tools">
+                  Custom Software Tools
+                </option>
+              </select>
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-bold text-slate-200">
+                Project Details
+              </label>
+
+              <textarea
+                name="message"
+                required
+                rows={6}
+                placeholder="Describe your project, website idea, automation need, or technical issue..."
+                className="w-full resize-y rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-bold text-white transition hover:bg-green-400"
+            >
+              Send Request <Mail size={18} />
+            </button>
+          </form>
         </div>
       </section>
 
