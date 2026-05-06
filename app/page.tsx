@@ -399,98 +399,110 @@ export default function Home() {
             receive your request directly by email.
           </p>
 
-          <form
-            action="https://formspree.io/f/mojrljjo"
-            method="POST"
-            className="mt-8 grid gap-5"
+          <form 
+          action="https://formspree.io/f/mojrljjo" 
+          method="POST" 
+          className="mt-8 grid gap-5"
           >
-            <input
-              type="hidden"
-              name="_subject"
-              value="New TechnicalSolutions Lead"
-            />
+      <input
+        type="hidden"
+        name="_subject"
+        value="New TechnicalSolutions Lead"
+      />
 
-            <div>
-              <label className="mb-2 block text-sm font-bold text-slate-200">
-                Name
-              </label>
+      <input
+        type="hidden"
+        name="_next"
+        value="https://technicalsolutions.vercel.app/thank-you"
+      />
 
-              <input
-                name="name"
-                type="text"
-                required
-                placeholder="Your name"
-                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
-              />
-            </div>
+      <div>
+        <label className="mb-2 block text-sm font-bold text-slate-200">
+          Name
+        </label>
 
-            <div>
-              <label className="mb-2 block text-sm font-bold text-slate-200">
-                Email
-              </label>
+        <input
+          name="name"
+          type="text"
+          required
+          placeholder="Your name"
+          className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+        />
+      </div>
 
-              <input
-                name="email"
-                type="email"
-                required
-                placeholder="your@email.com"
-                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
-              />
-            </div>
+      <div>
+        <label className="mb-2 block text-sm font-bold text-slate-200">
+          Email
+        </label>
 
-            <div>
-              <label className="mb-2 block text-sm font-bold text-slate-200">
-                Service Needed
-              </label>
+        <input
+          name="email"
+          type="email"
+          required
+          placeholder="your@email.com"
+          className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+        />
+      </div>
 
-              <select
-                name="service"
-                required
-                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
-              >
-                <option value="">Select a service</option>
-                <option value="Business Website Development">
-                  Business Website Development
-                </option>
-                <option value="Automation Engineering">
-                  Automation Engineering
-                </option>
-                <option value="Data Integration & ETL">
-                  Data Integration & ETL
-                </option>
-                <option value="Technical Support & Debugging">
-                  Technical Support & Debugging
-                </option>
-                <option value="DevOps & Infrastructure">
-                  DevOps & Infrastructure
-                </option>
-                <option value="Custom Software Tools">
-                  Custom Software Tools
-                </option>
-              </select>
-            </div>
+      <div>
+        <label className="mb-2 block text-sm font-bold text-slate-200">
+          Service Needed
+        </label>
 
-            <div>
-              <label className="mb-2 block text-sm font-bold text-slate-200">
-                Project Details
-              </label>
+        <select
+          name="service"
+          required
+          className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+        >
+          <option value="">Select a service</option>
 
-              <textarea
-                name="message"
-                required
-                rows={6}
-                placeholder="Describe your project, website idea, automation need, or technical issue..."
-                className="w-full resize-y rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
-              />
-            </div>
+          <option value="Business Website Development">
+            Business Website Development
+          </option>
 
-            <button
-              type="submit"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-bold text-white transition hover:bg-green-400"
-            >
-              Send Request <Mail size={18} />
-            </button>
-          </form>
+          <option value="Automation Engineering">
+            Automation Engineering
+          </option>
+
+          <option value="Data Integration & ETL">
+            Data Integration & ETL
+          </option>
+
+          <option value="Technical Support & Debugging">
+            Technical Support & Debugging
+          </option>
+
+          <option value="DevOps & Infrastructure">
+            DevOps & Infrastructure
+          </option>
+
+          <option value="Custom Software Tools">
+            Custom Software Tools
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <label className="mb-2 block text-sm font-bold text-slate-200">
+          Project Details
+        </label>
+
+        <textarea
+          name="message"
+          required
+          rows={6}
+          placeholder="Describe your project, website idea, automation need, or technical issue..."
+          className="w-full resize-y rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-bold text-white transition hover:bg-green-400"
+      >
+        Send Request <Mail size={18} />
+      </button>
+    </form>
         </div>
       </section>
 
