@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowRight,
   Bot,
@@ -56,25 +58,39 @@ const pricing = [
   {
     title: "Starter Website",
     price: "$500+",
-    description: "Simple landing page, portfolio, or small business website.",
+    description:
+      "Simple landing page, portfolio, or small business website.",
     items: ["Responsive design", "Contact section", "Basic SEO structure"],
   },
   {
     title: "Business Website",
     price: "$1,500+",
-    description: "Professional multi-page website with branding and conversion-focused sections.",
-    items: ["Multiple pages", "Services/pricing", "Lead capture", "Deployment"],
+    description:
+      "Professional multi-page website with branding and conversion-focused sections.",
+    items: [
+      "Multiple pages",
+      "Services/pricing",
+      "Lead capture",
+      "Deployment",
+    ],
   },
   {
     title: "Automation Tool",
     price: "$250+",
-    description: "Python/.NET scripts or small tools to automate repetitive business tasks.",
-    items: ["File processing", "Reports", "API workflows", "Data cleanup"],
+    description:
+      "Python/.NET scripts or small tools to automate repetitive business tasks.",
+    items: [
+      "File processing",
+      "Reports",
+      "API workflows",
+      "Data cleanup",
+    ],
   },
   {
     title: "Technical Consulting",
     price: "$50/hr",
-    description: "Debugging, setup help, deployment support, and code troubleshooting.",
+    description:
+      "Debugging, setup help, deployment support, and code troubleshooting.",
     items: ["Python", "Flask", "React", "SQL", "Docker", "Deployment"],
   },
 ];
@@ -117,13 +133,6 @@ const skills = [
 ];
 
 export default function Home() {
-  const email = "Harrismustic@gmail.com";
-  const mailto = `mailto:${email}?subject=${encodeURIComponent(
-    "Project Request - TechnicalSolutions"
-  )}&body=${encodeURIComponent(
-    "Hi Harris,\n\nI am interested in help with:\n\nProject details:\n\nBudget/timeline:\n\nThanks,"
-  )}`;
-
   return (
     <main className="min-h-screen bg-slate-50">
       <header className="bg-gradient-to-br from-slate-950 via-blue-950 to-blue-700 text-white">
@@ -131,12 +140,27 @@ export default function Home() {
           <a href="#" className="text-xl font-bold tracking-tight">
             TechnicalSolutions
           </a>
+
           <div className="hidden items-center gap-7 text-sm font-semibold md:flex">
-            <a href="#services" className="hover:text-green-300">Services</a>
-            <a href="#pricing" className="hover:text-green-300">Pricing</a>
-            <a href="#portfolio" className="hover:text-green-300">Portfolio</a>
-            <a href="#about" className="hover:text-green-300">About</a>
-            <a href="#contact" className="hover:text-green-300">Contact</a>
+            <a href="#services" className="hover:text-green-300">
+              Services
+            </a>
+
+            <a href="#pricing" className="hover:text-green-300">
+              Pricing
+            </a>
+
+            <a href="#portfolio" className="hover:text-green-300">
+              Portfolio
+            </a>
+
+            <a href="#about" className="hover:text-green-300">
+              About
+            </a>
+
+            <a href="#contact" className="hover:text-green-300">
+              Contact
+            </a>
           </div>
         </nav>
 
@@ -145,9 +169,11 @@ export default function Home() {
             <p className="mb-4 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-wide text-green-300">
               Software Automation & Web Solutions
             </p>
+
             <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
               Custom websites, automation tools, and technical solutions.
             </h1>
+
             <p className="mt-6 max-w-2xl text-lg leading-8 text-blue-50 md:text-xl">
               Helping businesses and individuals streamline workflows, build
               professional web platforms, fix technical problems, and turn ideas
@@ -156,11 +182,12 @@ export default function Home() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href={mailto}
+                href="#contact"
                 className="inline-flex items-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-bold text-white shadow-soft transition hover:bg-green-400"
               >
                 Request a Quote <ArrowRight size={18} />
               </a>
+
               <a
                 href="#portfolio"
                 className="rounded-xl border border-white/30 px-6 py-4 font-bold text-white transition hover:bg-white hover:text-blue-700"
@@ -176,8 +203,10 @@ export default function Home() {
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-blue-100 text-2xl font-black text-blue-700">
                   HM
                 </div>
+
                 <div>
                   <h2 className="text-2xl font-black">Harris Mustic</h2>
+
                   <p className="text-sm font-semibold text-slate-600">
                     Software Developer • DevOps • Automation
                   </p>
@@ -186,16 +215,23 @@ export default function Home() {
 
               <div className="mt-6 grid gap-3 text-sm text-slate-700">
                 <p className="flex items-center gap-2">
-                  <MapPin size={17} className="text-blue-600" /> Phoenix, Arizona
+                  <MapPin size={17} className="text-blue-600" />
+                  Phoenix, Arizona
                 </p>
+
                 <p className="flex items-center gap-2">
-                  <Mail size={17} className="text-blue-600" /> {email}
+                  <Mail size={17} className="text-blue-600" />
+                  Harrismustic@gmail.com
                 </p>
+
                 <p className="flex items-center gap-2">
-                  <Phone size={17} className="text-blue-600" /> (602) 410-1646
+                  <Phone size={17} className="text-blue-600" />
+                  (602) 410-1646
                 </p>
+
                 <p className="flex items-center gap-2">
-                  <Linkedin size={17} className="text-blue-600" /> linkedin.com/in/harris-mustic
+                  <Linkedin size={17} className="text-blue-600" />
+                  linkedin.com/in/harris-mustic
                 </p>
               </div>
 
@@ -217,16 +253,27 @@ export default function Home() {
           title="Technical services built around real business outcomes."
           text="I focus on solutions that save time, reduce manual work, improve systems, and help businesses look more professional online."
         />
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
+
             return (
-              <article key={service.title} className="rounded-3xl bg-white p-7 shadow-soft">
+              <article
+                key={service.title}
+                className="rounded-3xl bg-white p-7 shadow-soft"
+              >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-700">
                   <Icon size={24} />
                 </div>
-                <h3 className="text-xl font-black text-slate-950">{service.title}</h3>
-                <p className="mt-3 leading-7 text-slate-600">{service.description}</p>
+
+                <h3 className="text-xl font-black text-slate-950">
+                  {service.title}
+                </h3>
+
+                <p className="mt-3 leading-7 text-slate-600">
+                  {service.description}
+                </p>
               </article>
             );
           })}
@@ -240,16 +287,32 @@ export default function Home() {
             title="Simple starting prices."
             text="Final pricing depends on scope, complexity, timeline, integrations, and support needs."
           />
+
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {pricing.map((plan) => (
-              <article key={plan.title} className="rounded-3xl bg-white p-7 shadow-soft">
-                <h3 className="text-lg font-black text-blue-700">{plan.title}</h3>
-                <p className="mt-3 text-4xl font-black text-slate-950">{plan.price}</p>
-                <p className="mt-3 min-h-20 leading-7 text-slate-600">{plan.description}</p>
+              <article
+                key={plan.title}
+                className="rounded-3xl bg-white p-7 shadow-soft"
+              >
+                <h3 className="text-lg font-black text-blue-700">
+                  {plan.title}
+                </h3>
+
+                <p className="mt-3 text-4xl font-black text-slate-950">
+                  {plan.price}
+                </p>
+
+                <p className="mt-3 min-h-20 leading-7 text-slate-600">
+                  {plan.description}
+                </p>
+
                 <ul className="mt-5 space-y-3 text-sm text-slate-700">
                   {plan.items.map((item) => (
                     <li key={item} className="flex gap-2">
-                      <CheckCircle2 className="mt-0.5 text-green-500" size={17} />
+                      <CheckCircle2
+                        className="mt-0.5 text-green-500"
+                        size={17}
+                      />
                       {item}
                     </li>
                   ))}
@@ -266,14 +329,27 @@ export default function Home() {
           title="Project experience that translates directly into client value."
           text="Examples of technical work and systems experience I can bring to business and software projects."
         />
+
         <div className="grid gap-6 md:grid-cols-3">
           {portfolio.map((project) => (
-            <article key={project.title} className="rounded-3xl bg-white p-7 shadow-soft">
-              <h3 className="text-xl font-black text-slate-950">{project.title}</h3>
-              <p className="mt-4 leading-7 text-slate-600">{project.description}</p>
+            <article
+              key={project.title}
+              className="rounded-3xl bg-white p-7 shadow-soft"
+            >
+              <h3 className="text-xl font-black text-slate-950">
+                {project.title}
+              </h3>
+
+              <p className="mt-4 leading-7 text-slate-600">
+                {project.description}
+              </p>
+
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
+                  <span
+                    key={tag}
+                    className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700"
+                  >
                     {tag}
                   </span>
                 ))}
@@ -289,31 +365,43 @@ export default function Home() {
             <div className="mx-auto flex h-44 w-44 items-center justify-center rounded-full bg-white/15 text-5xl font-black ring-4 ring-white/20">
               HM
             </div>
-            <h2 className="mt-6 text-center text-3xl font-black">Harris Mustic</h2>
+
+            <h2 className="mt-6 text-center text-3xl font-black">
+              Harris Mustic
+            </h2>
+
             <p className="mt-2 text-center font-semibold text-blue-100">
               Software Developer | Automation & Data Integration
             </p>
           </div>
 
           <div>
-            <p className="font-bold uppercase tracking-wide text-blue-700">About</p>
+            <p className="font-bold uppercase tracking-wide text-blue-700">
+              About
+            </p>
+
             <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 md:text-5xl">
               Enterprise-style engineering for practical business problems.
             </h2>
+
             <p className="mt-6 leading-8 text-slate-600">
               I’m a software developer with experience in data integration,
               process automation, backend systems, DevOps, and enterprise
               application development.
             </p>
+
             <p className="mt-4 leading-8 text-slate-600">
               My background includes automation and infrastructure work at Intel,
-              along with healthcare workflow automation, ETL pipelines, APIs, and
-              internal software tools for Donor Network of Arizona.
+              along with healthcare workflow automation, ETL pipelines, APIs,
+              and internal software tools for Donor Network of Arizona.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2">
               {skills.map((skill) => (
-                <span key={skill} className="rounded-full bg-slate-100 px-4 py-2 text-sm font-bold text-slate-700">
+                <span
+                  key={skill}
+                  className="rounded-full bg-slate-100 px-4 py-2 text-sm font-bold text-slate-700"
+                >
                   {skill}
                 </span>
               ))}
@@ -324,27 +412,135 @@ export default function Home() {
 
       <section id="contact" className="mx-auto max-w-4xl px-6 py-20">
         <div className="rounded-3xl bg-slate-950 p-8 text-white shadow-soft md:p-12">
-          <p className="font-bold uppercase tracking-wide text-green-400">Contact</p>
-          <h2 className="mt-3 text-3xl font-black md:text-5xl">Start your project.</h2>
-          <p className="mt-5 max-w-2xl leading-8 text-slate-300">
-            Tell me what you need help with: a website, automation tool, dashboard,
-            data workflow, DevOps issue, or technical problem.
+          <p className="font-bold uppercase tracking-wide text-green-400">
+            Contact
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href={mailto}
-              className="inline-flex items-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-bold text-white transition hover:bg-green-400"
+          <h2 className="mt-3 text-3xl font-black md:text-5xl">
+            Start your project.
+          </h2>
+
+          <p className="mt-5 max-w-2xl leading-8 text-slate-300">
+            Tell me what you need help with. Fill out the form below and it will
+            open an email draft with your answers already filled in.
+          </p>
+
+          <form
+            className="mt-8 grid gap-5"
+            onSubmit={(event) => {
+              event.preventDefault();
+
+              const form = event.currentTarget;
+              const formData = new FormData(form);
+
+              const name = String(formData.get("name") || "");
+              const emailAddress = String(formData.get("email") || "");
+              const service = String(formData.get("service") || "");
+              const message = String(formData.get("message") || "");
+
+              const subject = `Project Request from ${name}`;
+
+              const body = `
+Name: ${name}
+Email: ${emailAddress}
+Service Needed: ${service}
+
+Project Details:
+${message}
+              `;
+
+              window.location.href = `mailto:Harrismustic@gmail.com?subject=${encodeURIComponent(
+                subject
+              )}&body=${encodeURIComponent(body)}`;
+            }}
+          >
+            <div>
+              <label className="mb-2 block text-sm font-bold text-slate-200">
+                Name
+              </label>
+
+              <input
+                name="name"
+                type="text"
+                required
+                placeholder="Your name"
+                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-bold text-slate-200">
+                Email
+              </label>
+
+              <input
+                name="email"
+                type="email"
+                required
+                placeholder="your@email.com"
+                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-bold text-slate-200">
+                Service Needed
+              </label>
+
+              <select
+                name="service"
+                required
+                className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+              >
+                <option value="">Select a service</option>
+
+                <option value="Business Website Development">
+                  Business Website Development
+                </option>
+
+                <option value="Automation Engineering">
+                  Automation Engineering
+                </option>
+
+                <option value="Data Integration & ETL">
+                  Data Integration & ETL
+                </option>
+
+                <option value="Technical Support & Debugging">
+                  Technical Support & Debugging
+                </option>
+
+                <option value="DevOps & Infrastructure">
+                  DevOps & Infrastructure
+                </option>
+
+                <option value="Custom Software Tools">
+                  Custom Software Tools
+                </option>
+              </select>
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-bold text-slate-200">
+                Project Details
+              </label>
+
+              <textarea
+                name="message"
+                required
+                rows={6}
+                placeholder="Describe your project, website idea, automation need, or technical issue..."
+                className="w-full resize-y rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-bold text-white transition hover:bg-green-400"
             >
-              Email Project Request <Mail size={18} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/harris-mustic/"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-4 font-bold text-white transition hover:bg-white hover:text-slate-950"
-            >
-              LinkedIn <Linkedin size={18} />
-            </a>
-          </div>
+              Send Request <Mail size={18} />
+            </button>
+          </form>
         </div>
       </section>
 
@@ -366,10 +562,14 @@ function SectionTitle({
 }) {
   return (
     <div className="mx-auto mb-12 max-w-3xl text-center">
-      <p className="font-bold uppercase tracking-wide text-blue-700">{eyebrow}</p>
+      <p className="font-bold uppercase tracking-wide text-blue-700">
+        {eyebrow}
+      </p>
+
       <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 md:text-5xl">
         {title}
       </h2>
+
       <p className="mt-5 leading-8 text-slate-600">{text}</p>
     </div>
   );
