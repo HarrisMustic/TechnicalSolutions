@@ -399,110 +399,36 @@ export default function Home() {
             receive your request directly by email.
           </p>
 
-          <form 
-          action="https://formspree.io/f/mojrljjo" 
-          method="POST" 
-          className="mt-8 grid gap-5"
-          >
-      <input
-        type="hidden"
-        name="_subject"
-        value="New TechnicalSolutions Lead"
-      />
+          <form
+            className="mt-8 grid gap-5"
+            onSubmit={async (event) => {
+              event.preventDefault();
 
-      <input
-        type="hidden"
-        name="_next"
-        value="https://technicalsolutions.vercel.app/thank-you"
-      />
+              const form = event.currentTarget;
+              const formData = new FormData(form);
 
-      <div>
-        <label className="mb-2 block text-sm font-bold text-slate-200">
-          Name
-        </label>
+              const payload = {
+                name: String(formData.get("name") || ""),
+                email: String(formData.get("email") || ""),
+                service: String(formData.get("service") || ""),
+                message: String(formData.get("message") || ""),
+              };
 
-        <input
-          name="name"
-          type="text"
-          required
-          placeholder="Your name"
-          className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
-        />
-      </div>
+              const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+              });
 
-      <div>
-        <label className="mb-2 block text-sm font-bold text-slate-200">
-          Email
-        </label>
-
-        <input
-          name="email"
-          type="email"
-          required
-          placeholder="your@email.com"
-          className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
-        />
-      </div>
-
-      <div>
-        <label className="mb-2 block text-sm font-bold text-slate-200">
-          Service Needed
-        </label>
-
-        <select
-          name="service"
-          required
-          className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
-        >
-          <option value="">Select a service</option>
-
-          <option value="Business Website Development">
-            Business Website Development
-          </option>
-
-          <option value="Automation Engineering">
-            Automation Engineering
-          </option>
-
-          <option value="Data Integration & ETL">
-            Data Integration & ETL
-          </option>
-
-          <option value="Technical Support & Debugging">
-            Technical Support & Debugging
-          </option>
-
-          <option value="DevOps & Infrastructure">
-            DevOps & Infrastructure
-          </option>
-
-          <option value="Custom Software Tools">
-            Custom Software Tools
-          </option>
-        </select>
-      </div>
-
-      <div>
-        <label className="mb-2 block text-sm font-bold text-slate-200">
-          Project Details
-        </label>
-
-        <textarea
-          name="message"
-          required
-          rows={6}
-          placeholder="Describe your project, website idea, automation need, or technical issue..."
-          className="w-full resize-y rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-bold text-white transition hover:bg-green-400"
-      >
-        Send Request <Mail size={18} />
-      </button>
-    </form>
+              if (response.ok) {
+                window.location.href = "/thank-you";
+              } else {
+                alert("There was a problem sending your request. Please try again.");
+              }
+            }}
+          ></form>
         </div>
       </section>
 
