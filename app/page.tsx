@@ -164,6 +164,24 @@ export default function Home() {
               professional web platforms, fix technical problems, and turn ideas
               into working software.
             </p>
+            <div className="mt-8 flex flex-wrap gap-4"></div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-blue-50 ring-1 ring-white/15 backdrop-blur">
+                Phoenix-Based
+              </span>
+
+              <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-blue-50 ring-1 ring-white/15 backdrop-blur">
+                Computer Science & Mathematics Graduate
+              </span>
+
+              <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-blue-50 ring-1 ring-white/15 backdrop-blur">
+                Intel DevOps Experience
+              </span>
+
+              <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-blue-50 ring-1 ring-white/15 backdrop-blur">
+                Healthcare Automation Experience
+              </span>
+            </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
