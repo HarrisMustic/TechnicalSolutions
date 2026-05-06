@@ -58,8 +58,7 @@ const pricing = [
   {
     title: "Starter Website",
     price: "$500+",
-    description:
-      "Simple landing page, portfolio, or small business website.",
+    description: "Simple landing page, portfolio, or small business website.",
     items: ["Responsive design", "Contact section", "Basic SEO structure"],
   },
   {
@@ -67,24 +66,14 @@ const pricing = [
     price: "$1,500+",
     description:
       "Professional multi-page website with branding and conversion-focused sections.",
-    items: [
-      "Multiple pages",
-      "Services/pricing",
-      "Lead capture",
-      "Deployment",
-    ],
+    items: ["Multiple pages", "Services/pricing", "Lead capture", "Deployment"],
   },
   {
     title: "Automation Tool",
     price: "$250+",
     description:
       "Python/.NET scripts or small tools to automate repetitive business tasks.",
-    items: [
-      "File processing",
-      "Reports",
-      "API workflows",
-      "Data cleanup",
-    ],
+    items: ["File processing", "Reports", "API workflows", "Data cleanup"],
   },
   {
     title: "Technical Consulting",
@@ -142,25 +131,11 @@ export default function Home() {
           </a>
 
           <div className="hidden items-center gap-7 text-sm font-semibold md:flex">
-            <a href="#services" className="hover:text-green-300">
-              Services
-            </a>
-
-            <a href="#pricing" className="hover:text-green-300">
-              Pricing
-            </a>
-
-            <a href="#portfolio" className="hover:text-green-300">
-              Portfolio
-            </a>
-
-            <a href="#about" className="hover:text-green-300">
-              About
-            </a>
-
-            <a href="#contact" className="hover:text-green-300">
-              Contact
-            </a>
+            <a href="#services" className="hover:text-green-300">Services</a>
+            <a href="#pricing" className="hover:text-green-300">Pricing</a>
+            <a href="#portfolio" className="hover:text-green-300">Portfolio</a>
+            <a href="#about" className="hover:text-green-300">About</a>
+            <a href="#contact" className="hover:text-green-300">Contact</a>
           </div>
         </nav>
 
@@ -206,7 +181,6 @@ export default function Home() {
 
                 <div>
                   <h2 className="text-2xl font-black">Harris Mustic</h2>
-
                   <p className="text-sm font-semibold text-slate-600">
                     Software Developer • DevOps • Automation
                   </p>
@@ -421,39 +395,21 @@ export default function Home() {
           </h2>
 
           <p className="mt-5 max-w-2xl leading-8 text-slate-300">
-            Tell me what you need help with. Fill out the form below and it will
-            open an email draft with your answers already filled in.
+            Tell me what you need help with. Submit the form below and I will
+            receive your request directly by email.
           </p>
 
           <form
+            action="https://formspree.io/f/mojrljjo"
+            method="POST"
             className="mt-8 grid gap-5"
-            onSubmit={(event) => {
-              event.preventDefault();
-
-              const form = event.currentTarget;
-              const formData = new FormData(form);
-
-              const name = String(formData.get("name") || "");
-              const emailAddress = String(formData.get("email") || "");
-              const service = String(formData.get("service") || "");
-              const message = String(formData.get("message") || "");
-
-              const subject = `Project Request from ${name}`;
-
-              const body = `
-Name: ${name}
-Email: ${emailAddress}
-Service Needed: ${service}
-
-Project Details:
-${message}
-              `;
-
-              window.location.href = `mailto:Harrismustic@gmail.com?subject=${encodeURIComponent(
-                subject
-              )}&body=${encodeURIComponent(body)}`;
-            }}
           >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New TechnicalSolutions Lead"
+            />
+
             <div>
               <label className="mb-2 block text-sm font-bold text-slate-200">
                 Name
@@ -493,27 +449,21 @@ ${message}
                 className="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-slate-950 outline-none focus:ring-4 focus:ring-green-500/30"
               >
                 <option value="">Select a service</option>
-
                 <option value="Business Website Development">
                   Business Website Development
                 </option>
-
                 <option value="Automation Engineering">
                   Automation Engineering
                 </option>
-
                 <option value="Data Integration & ETL">
                   Data Integration & ETL
                 </option>
-
                 <option value="Technical Support & Debugging">
                   Technical Support & Debugging
                 </option>
-
                 <option value="DevOps & Infrastructure">
                   DevOps & Infrastructure
                 </option>
-
                 <option value="Custom Software Tools">
                   Custom Software Tools
                 </option>
